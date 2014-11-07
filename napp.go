@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+	setupCli()
+
 	app := cli.NewApp()
 	app.Name = "napp"
 	app.Version = Version

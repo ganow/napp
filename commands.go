@@ -14,11 +14,16 @@ var Commands = []cli.Command{
 
 var commandFr = cli.Command{
 	Name:  "fr",
-	Usage: "",
+	Usage: "napp fr [command options] [neuron index] file_name",
 	Description: `
 `,
 	Action: doFr,
 	Flags: []cli.Flag{
+		cli.StringFlag{
+			Name:  "separator, s",
+			Value: "\t",
+			Usage: "value separator for rst file",
+		},
 		cli.Float64Flag{
 			Name:  "from, f",
 			Value: 0,
@@ -44,6 +49,11 @@ var commandFf = cli.Command{
 `,
 	Action: doFf,
 	Flags: []cli.Flag{
+		cli.StringFlag{
+			Name:  "separator, s",
+			Value: "\t",
+			Usage: "value separator for rst file",
+		},
 		cli.Float64Flag{
 			Name:  "from, f",
 			Value: 0,
@@ -69,6 +79,11 @@ var commandCorr = cli.Command{
 `,
 	Action: doCorr,
 	Flags: []cli.Flag{
+		cli.StringFlag{
+			Name:  "separator, s",
+			Value: "\t",
+			Usage: "value separator for rst file",
+		},
 		cli.Float64Flag{
 			Name:  "from, f",
 			Value: 0,
