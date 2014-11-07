@@ -6,10 +6,10 @@ import (
 
 func setupCli() {
 	cli.CommandHelpTemplate = `NAME:
-   {{.Name}}
+   {{.Name}} - {{.Usage}}
 
 USAGE:
-   {{.Usage}}
+   napp {{.Name}} [command options] [neuron index] file_name
 
 DESCRIPTION:
    {{.Description}}

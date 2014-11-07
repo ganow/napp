@@ -14,7 +14,7 @@ var Commands = []cli.Command{
 
 var commandFr = cli.Command{
 	Name:  "fr",
-	Usage: "napp fr [command options] [neuron index] file_name",
+	Usage: "calculate mean firing rate from rst file",
 	Description: `
 `,
 	Action: doFr,
