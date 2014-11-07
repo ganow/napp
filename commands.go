@@ -18,6 +18,23 @@ var commandFr = cli.Command{
 	Description: `
 `,
 	Action: doFr,
+	Flags: []cli.Flag{
+		cli.Float64Flag{
+			Name:  "from, f",
+			Value: 0,
+			Usage: "aggregate values from #[ms]",
+		},
+		cli.Float64Flag{
+			Name:  "to, t",
+			Value: -1,
+			Usage: "aggregate values to #[ms]. -1 means 'until end'",
+		},
+		cli.Float64Flag{
+			Name:  "binsize, b",
+			Value: -1,
+			Usage: "aggregate values for each #[ms]. -1 means gather them altogether",
+		},
+	},
 }
 
 var commandFf = cli.Command{
@@ -26,6 +43,23 @@ var commandFf = cli.Command{
 	Description: `
 `,
 	Action: doFf,
+	Flags: []cli.Flag{
+		cli.Float64Flag{
+			Name:  "from, f",
+			Value: 0,
+			Usage: "aggregate values from #[ms]",
+		},
+		cli.Float64Flag{
+			Name:  "to, t",
+			Value: -1,
+			Usage: "aggregate values to #[ms]. -1 means 'until end'",
+		},
+		cli.Float64Flag{
+			Name:  "binsize, b",
+			Value: -1,
+			Usage: "aggregate values for each #[ms]. -1 means gather them altogether",
+		},
+	},
 }
 
 var commandCorr = cli.Command{
@@ -34,6 +68,28 @@ var commandCorr = cli.Command{
 	Description: `
 `,
 	Action: doCorr,
+	Flags: []cli.Flag{
+		cli.Float64Flag{
+			Name:  "from, f",
+			Value: 0,
+			Usage: "aggregate values from #[ms]",
+		},
+		cli.Float64Flag{
+			Name:  "to, t",
+			Value: -1,
+			Usage: "aggregate values to #[ms]. -1 means 'until end'",
+		},
+		cli.Float64Flag{
+			Name:  "binsize, b",
+			Value: -1,
+			Usage: "aggregate values for each #[ms]. -1 means gather them altogether",
+		},
+		cli.IntFlag{
+			Name:  "aggregate-by, a",
+			Value: 1,
+			Usage: "spike count correlations between # and rest args",
+		},
+	},
 }
 
 func debug(v ...interface{}) {
@@ -46,13 +102,4 @@ func assert(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
-}
-
-func doFr(c *cli.Context) {
-}
-
-func doFf(c *cli.Context) {
-}
-
-func doCorr(c *cli.Context) {
 }
