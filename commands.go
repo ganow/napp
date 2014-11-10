@@ -39,6 +39,15 @@ var commandFr = cli.Command{
 			Value: -1,
 			Usage: "aggregate values for each #[ms]. -1 means gather them altogether",
 		},
+		cli.BoolFlag{
+			Name:  "each, e",
+			Usage: "calculate values for each neurons",
+		},
+		cli.IntFlag{
+			Name:  "N",
+			Value: -1,
+			Usage: "total # of neurons",
+		},
 	},
 }
 
@@ -68,6 +77,15 @@ var commandFf = cli.Command{
 			Name:  "binsize, b",
 			Value: -1,
 			Usage: "aggregate values for each #[ms]. -1 means gather them altogether",
+		},
+		cli.BoolFlag{
+			Name:  "each, e",
+			Usage: "calculate values for each neurons",
+		},
+		cli.IntFlag{
+			Name:  "N",
+			Value: -1,
+			Usage: "total # of neurons",
 		},
 	},
 }
@@ -103,6 +121,15 @@ var commandCorr = cli.Command{
 			Name:  "aggregate-by, a",
 			Value: 1,
 			Usage: "spike count correlations between # and rest args",
+		},
+		cli.BoolFlag{
+			Name:  "each, e",
+			Usage: "calculate values for each neurons",
+		},
+		cli.IntFlag{
+			Name:  "N",
+			Value: -1,
+			Usage: "total # of neurons",
 		},
 	},
 }
